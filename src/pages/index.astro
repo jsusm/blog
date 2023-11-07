@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectEntry from '../components/ProjectEntry.astro';
 import PostEntry from '../components/PostEntry.astro';
+import TextAnchor from '../components/TextAnchor.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -37,6 +38,12 @@ import PostEntry from '../components/PostEntry.astro';
         <PostEntry title="Configuring neovim" desc="In this article I'm going to explain the process of installing arch linux." date="11/11/2023" />
         <PostEntry title="Setting up a typescript-node project" desc="In this article I'm going to explain the process of installing arch linux." date="11/11/2023" />
       </div>
+    </section>
+    <section class="py-10">
+      <h2 class="text-xl font-bold mb-1">Get in touch</h2>
+      <p class="text-gray-300">
+        You can email me at <TextAnchor href='mailto:jsusmarcano.jm@gmail.com'>jsusmarcano.jm@gmail.com</TextAnchor> or follow me on social media
+      </p>
     </section>
   </main>
 </Layout>
