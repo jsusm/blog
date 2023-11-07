@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="mx-auto max-w-4xl px-8">
+    <header class="flex flex-col gap-3 sm:flex-row justify-between py-16">
+      <a class="text-sm text-stone-300 hover:text-stone-50 hover:underline font-medium" href="mailto:jsusmarcano.jm@gmail.com">{"["}jsusmarcano.jm@gmail.com{"]"}</a>
+      <a class="text-sm text-stone-300 font-medium" href="/">Home</a>
+    </header>
+    <section class="max-w-xl">
+      <h1 class="text-5xl font-bold">Hi, I am Jsusm 👋</h1>
+      <p class="py-4 text-stone-300">
+        Hello, I am a frontend developer with over 1 year of experience.
+        I am currently studying a computer science degree at the UCV.
+        Nowdays i build my projects with astrojs, nextjs, and typescript.
+        Outside of scholl I like to do calisthenics, cooking and learn about programming.
+      </p>
+    </section>
+    <section>
+      <a class="text-sm text-stone-300 hover:text-stone-50 hover:underline font-medium" href="https://github.com/jsusm">[Github]</a>
+    </section>
+    <section class="py-10">
+      <h2 class="text-xl font-bold">Selected Projects</h2>
+      <div class="flex flex-col py-4 gap-4">
+        <a class="px-6 py-3 border border-stone-600 rounded-lg transition-all flex justify-between items-center hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
+          <div class="flex flex-wrap gap-2">
+            <span>- Spirograph Gallery · </span>
+            <span class="text-stone-400">Typescript, Astro</span>
+          </div>
+          <div class="group-hover:translate-x-1 group-hover:text-stone-100 transition-transform text-stone-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentcolor" class="w-5 h-5">
+              <path fillrule="evenodd" d="m5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" cliprule="evenodd" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h2 class="text-xl font-bold mb-4">Latest Posts</h2>
+      <div class="space-y-4">
+        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
+          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
+            <p class="text-sm">
+              Installing Arch linux
+            </p>
+            <p class="text-gray-400 text-sm">
+              11/07/2023
+            </p>
+          </div>
+          <p class="text-sm text-gray-400 line-clamp-1">
+            In this article I'm going to explain the process of installing arch linux.
+          </p>
+        </div>
+        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
+          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
+            <p class="text-sm">
+              Configuring neovim
+            </p>
+            <p class="text-gray-400 text-sm">
+              11/11/2023
+            </p>
+          </div>
+          <p class="text-sm text-gray-400 line-clamp-1">
+            In this article I'm going to explain the process of installing arch linux.
+          </p>
+        </div>
+        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
+          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
+            <p class="text-sm">
+              Setting up a typescript-node project
+            </p>
+            <p class="text-gray-400 text-sm">
+              11/11/2023
+            </p>
+          </div>
+          <p class="text-sm text-gray-400 line-clamp-1">
+            In this article I'm going to explain the process of installing arch linux.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
