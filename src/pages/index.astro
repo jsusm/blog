@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectEntry from '../components/ProjectEntry.astro';
+import PostEntry from '../components/PostEntry.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -32,45 +33,9 @@ import ProjectEntry from '../components/ProjectEntry.astro';
     <section>
       <h2 class="text-xl font-bold mb-4">Latest Posts</h2>
       <div class="space-y-4">
-        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
-          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
-            <p class="text-sm">
-              Installing Arch linux
-            </p>
-            <p class="text-gray-400 text-sm">
-              11/07/2023
-            </p>
-          </div>
-          <p class="text-sm text-gray-400 line-clamp-1">
-            In this article I'm going to explain the process of installing arch linux.
-          </p>
-        </div>
-        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
-          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
-            <p class="text-sm">
-              Configuring neovim
-            </p>
-            <p class="text-gray-400 text-sm">
-              11/11/2023
-            </p>
-          </div>
-          <p class="text-sm text-gray-400 line-clamp-1">
-            In this article I'm going to explain the process of installing arch linux.
-          </p>
-        </div>
-        <div class="px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
-          <div class="flex flex-col sm:flex-row justify-between items-baseline gap-x-1 mb-2">
-            <p class="text-sm">
-              Setting up a typescript-node project
-            </p>
-            <p class="text-gray-400 text-sm">
-              11/11/2023
-            </p>
-          </div>
-          <p class="text-sm text-gray-400 line-clamp-1">
-            In this article I'm going to explain the process of installing arch linux.
-          </p>
-        </div>
+        <PostEntry title="Installing Arch linux" desc="In this article I'm going to explain the process of installing arch linux." date="11/07/2023" />
+        <PostEntry title="Configuring neovim" desc="In this article I'm going to explain the process of installing arch linux." date="11/11/2023" />
+        <PostEntry title="Setting up a typescript-node project" desc="In this article I'm going to explain the process of installing arch linux." date="11/11/2023" />
       </div>
     </section>
   </main>
