@@ -1,4 +1,5 @@
 ---
+import LinkIcon from './LinkIcon.astro';
 interface Props {
   href: string;
   title: string;
@@ -14,9 +15,5 @@ const props = Astro.props
     <span>{props.title} · </span>
     <span class="text-stone-400">{props.desc}</span>
   </div>
-  <div class="group-hover:translate-x-1 group-hover:text-stone-100 transition-transform text-stone-400">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" class="w-5 h-5">
-      <path fill-rule="evenodd" d="m5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-    </svg>
-  </div>
+  <LinkIcon />
 </a>
