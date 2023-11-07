@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectEntry from '../components/ProjectEntry.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,17 +24,9 @@ import Layout from '../layouts/Layout.astro';
     <section class="py-10">
       <h2 class="text-xl font-bold">Selected Projects</h2>
       <div class="flex flex-col py-4 gap-4">
-        <a class="px-6 py-3 border border-stone-600 rounded-lg transition-all flex justify-between items-center hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group">
-          <div class="flex flex-wrap gap-2">
-            <span>- Spirograph Gallery · </span>
-            <span class="text-stone-400">Typescript, Astro</span>
-          </div>
-          <div class="group-hover:translate-x-1 group-hover:text-stone-100 transition-transform text-stone-400">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentcolor" class="w-5 h-5">
-              <path fillrule="evenodd" d="m5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" cliprule="evenodd" />
-            </svg>
-          </div>
-        </a>
+        <ProjectEntry href="#" title="Spirograph Gallery" desc="Typescript, Astrojs" />
+        <ProjectEntry href="#" title="Awesome Neovim web" desc="Nodejs, Typescript" />
+        <ProjectEntry href="#" title="Financial App" desc="Typescript, Nextjs" />
       </div>
     </section>
     <section>
