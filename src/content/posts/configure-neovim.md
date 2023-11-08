@@ -1,5 +1,7 @@
 ---
 title: "Config neovim"
+desc: "Configuring neovim to a ready to use stage"
+date: "22-08-2023"
 ---
 
 # A guide to configure neovim
