@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextAnchor from "../components/TextAnchor.astro";
+import { getCollection } from 'astro:content'
+
+const allPosts = await getCollection('posts')
+---
+<Layout title="Posts">
+  <ul>
+    {allPosts.map(p => (
+      <li>
+        {p.data.title}
+        <TextAnchor href={`/posts/${p.slug}`}>
+          Link
+        </TextAnchor>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
