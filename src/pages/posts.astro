@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TextAnchor from "../components/TextAnchor.astro";
 import { getCollection } from 'astro:content'
 import PostEntry from "../components/PostEntry.astro";
 
@@ -12,6 +11,7 @@ const allPosts = await getCollection('posts')
     {allPosts.map(p => (
       <li>
         <PostEntry
+          href={`/posts/${p.slug}`}
           title={p.data.title}
           desc={p.data.desc}
           date='03-20-2024'

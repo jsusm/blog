@@ -1,0 +1,12 @@
+---
+import Layout from "./Layout.astro";
+interface Props {
+  title: string;
+}
+const props = Astro.props
+---
+<Layout title={props.title}>
+  <div class="prose prose-stone prose-invert min-w-full sm:prose-headings:text-7xl">
+    <slot />
+  </div>
+</Layout>
