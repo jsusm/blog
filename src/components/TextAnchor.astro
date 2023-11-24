@@ -4,6 +4,10 @@ interface Props {
 }
 const props = Astro.props;
 ---
-<a class="text-stone-300 hover:text-stone-50 hover:underline font-medium" href={props.href}>
+
+<a
+  class="text-stone-300 hover:text-stone-50 hover:underline font-medium"
+  href={props.href}
+>
   [<slot />]
 </a>

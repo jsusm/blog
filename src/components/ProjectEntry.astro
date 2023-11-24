@@ -1,18 +1,19 @@
 ---
-import LinkIcon from './LinkIcon.astro';
+import LinkIcon from "./LinkIcon.astro";
 interface Props {
   href: string;
   title: string;
   desc: string;
 }
-const props = Astro.props
+const props = Astro.props;
 ---
+
 <a
   class="px-6 py-3 border border-stone-600 rounded-lg transition-all flex justify-between items-center hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group"
   href={props.href}
 >
   <div class="flex flex-wrap gap-2">
-    <span>{props.title} · </span>
+    <span>{props.title} ·</span>
     <span class="text-stone-400">{props.desc}</span>
   </div>
   <LinkIcon />

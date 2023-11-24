@@ -1,53 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProjectEntry from '../components/ProjectEntry.astro';
-import PostEntry from '../components/PostEntry.astro';
-import TextAnchor from '../components/TextAnchor.astro';
-import { getCollection } from 'astro:content'
+import Layout from "../layouts/Layout.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+import PostEntry from "../components/PostEntry.astro";
+import TextAnchor from "../components/TextAnchor.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = await getCollection('posts')
-const latestPost = allPosts.slice(0, 3)
-
+const allPosts = await getCollection("posts");
+const latestPost = allPosts.slice(0, 3);
 ---
 
 <Layout title="Jsus Blog">
-    <section class="max-w-xl">
-      <h1 class="text-5xl font-bold">Hi, I am Jsusm 👋</h1>
-      <p class="py-4 text-stone-300">
-        Hello, I am a frontend developer with over 1 year of personal experience.
-        I am currently studying a computer science degree at the UCV.
-        Nowdays i build my projects with astrojs, nextjs, and typescript.
-        Outside of scholl I like to do calisthenics, cooking and learn about programming.
-      </p>
-    </section>
-    <section>
-      <a class="text-sm text-stone-300 hover:text-stone-50 hover:underline font-medium" href="https://github.com/jsusm">[Github]</a>
-    </section>
-    <section class="py-10">
-      <h2 class="text-xl font-bold">Selected Projects</h2>
-      <div class="flex flex-col py-4 gap-4">
-        <ProjectEntry href="#" title="Spirograph Gallery" desc="Typescript, Astrojs" />
-        <ProjectEntry href="#" title="Awesome Neovim web" desc="Nodejs, Typescript" />
-        <ProjectEntry href="#" title="Financial App" desc="Typescript, Nextjs" />
-      </div>
-    </section>
-    <section>
-      <h2 class="text-xl font-bold mb-4">Latest Posts</h2>
-      <div class="space-y-4">
-        {latestPost.map(p => (
+  <section class="max-w-xl">
+    <h1 class="text-5xl font-bold">Hi, I am Jsusm 👋</h1>
+    <p class="py-4 text-stone-300">
+      Hello, I am a frontend developer with over 1 year of personal experience.
+      I am currently studying a computer science degree at the UCV. Nowdays i
+      build my projects with astrojs, nextjs, and typescript. Outside of scholl
+      I like to do calisthenics, cooking and learn about programming.
+    </p>
+  </section>
+  <section>
+    <a
+      class="text-sm text-stone-300 hover:text-stone-50 hover:underline font-medium"
+      href="https://github.com/jsusm">[Github]</a
+    >
+  </section>
+  <section class="py-10">
+    <h2 class="text-xl font-bold">Selected Projects</h2>
+    <div class="flex flex-col py-4 gap-4">
+      <ProjectEntry
+        href="#"
+        title="Spirograph Gallery"
+        desc="Typescript, Astrojs"
+      />
+      <ProjectEntry
+        href="#"
+        title="Awesome Neovim web"
+        desc="Nodejs, Typescript"
+      />
+      <ProjectEntry href="#" title="Financial App" desc="Typescript, Nextjs" />
+    </div>
+  </section>
+  <section>
+    <h2 class="text-xl font-bold mb-4">Latest Posts</h2>
+    <div class="space-y-4">
+      {
+        latestPost.map((p) => (
           <PostEntry
             title={p.data.title}
             desc={p.data.desc}
             date={p.data.date}
             href={`/posts/${p.slug}`}
           />
-        ))}
-      </div>
-    </section>
-    <section class="py-10">
-      <h2 class="text-xl font-bold mb-1">Get in touch</h2>
-      <p class="text-gray-300">
-        You can email me at <TextAnchor href='mailto:jsusmarcano.jm@gmail.com'>jsusmarcano.jm@gmail.com</TextAnchor> or follow me on social media
-      </p>
-    </section>
+        ))
+      }
+    </div>
+  </section>
+  <section class="py-10">
+    <h2 class="text-xl font-bold mb-1">Get in touch</h2>
+    <p class="text-gray-300">
+      You can email me at <TextAnchor href="mailto:jsusmarcano.jm@gmail.com">
+        jsusmarcano.jm@gmail.com
+      </TextAnchor> or follow me on social media
+    </p>
+  </section>
 </Layout>

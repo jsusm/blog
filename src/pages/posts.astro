@@ -1,23 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 import PostEntry from "../components/PostEntry.astro";
 
-const allPosts = await getCollection('posts')
+const allPosts = await getCollection("posts");
 ---
+
 <Layout title="Posts">
   <h1 class="text-4xl sm:text-5xl font-bold mb-8">Posts</h1>
   <ul class="space-y-4">
-    {allPosts.map(p => (
-      <li>
-        <PostEntry
-          href={`/posts/${p.slug}`}
-          title={p.data.title}
-          desc={p.data.desc}
-          date='03-20-2024'
-        />
-      </li>
-    ))}
+    {
+      allPosts.map((p) => (
+        <li>
+          <PostEntry
+            href={`/posts/${p.slug}`}
+            title={p.data.title}
+            desc={p.data.desc}
+            date="03-20-2024"
+          />
+        </li>
+      ))
+    }
   </ul>
 </Layout>
-

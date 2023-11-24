@@ -1,5 +1,5 @@
 ---
-import LinkIcon from './LinkIcon.astro';
+import LinkIcon from "./LinkIcon.astro";
 interface Props {
   title: string;
   desc: string;
@@ -8,20 +8,23 @@ interface Props {
 }
 const props = Astro.props;
 ---
+
 <a
   href={props.href}
   class="block px-6 py-3 border border-stone-600 rounded-lg transition-all hover:border-stone-400 hover:-translate-y-1 hover:cursor-pointer group"
 >
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-x-1 gap-y-2 mb-2">
+  <div
+    class="flex flex-col sm:flex-row sm:items-center justify-between gap-x-1 gap-y-2 mb-2"
+  >
     <p class="sm:text-lg">
       {props.title}
     </p>
     <div class="flex gap-2 items-center">
-    <p class="text-stone-400 text-sm">
-      {props.date}
-    </p>
+      <p class="text-stone-400 text-sm">
+        {props.date}
+      </p>
       <LinkIcon />
-      </div>
+    </div>
   </div>
   <p class="text-sm text-stone-400 line-clamp-1">
     {props.desc}
