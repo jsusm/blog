@@ -1,0 +1,75 @@
+<div class="w-full grid place-content-center place-items-center pb-8">
+  <canvas class="border-2 border-stone-500 rounded-lg" id="canvas-sine" />
+</div>
+<script>
+  const canvas = document.getElementById('canvas-sine') as HTMLCanvasElement | null;
+  if(canvas == null) {
+    throw new Error("Element with id: 'canvas-sine' should be in the DOM")
+  }
+  let height = 233;
+  let width = 377;
+  if (document.body.getBoundingClientRect().width < 500) {
+    height = 144;
+    width = 233;
+  }
+  canvas.height = height
+  canvas.width = width
+
+  const ctx = canvas.getContext('2d')
+  if(ctx == null) {
+    throw new Error("Cannot get context from canvas element.")
+  }
+
+  let previous: number;
+  let x1 = width / 2 - 10;
+  let y1 = height / 2 - 55;
+  let x1speed = 2.1;
+  let y1speed = 0.2;
+
+  let x2 = width / 2;
+  let y2 = height / 2;
+
+  function draw(ctx: CanvasRenderingContext2D, delta: number) {
+    ctx.reset()
+
+    ctx.strokeStyle = "#b91c1c"
+    ctx.fillStyle = "#b91c1c"
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.ellipse(x1, y1, 5, 5, 0, 0, Math.PI * 2)
+    ctx.fill()
+
+    const distance = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))
+
+    const force = 5 / (distance * distance)
+
+    x1speed += (x2 - x1) * force;
+    y1speed += (y2 - y1) * force;
+
+    x1 += x1speed;
+    y1 += y1speed;
+
+
+    ctx.strokeStyle = "#78716c"
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.ellipse(x2, y2, 21, 21, 0, 0, Math.PI * 2)
+    ctx.stroke()
+  }
+  draw(ctx, 0)
+
+  function anim(t: number) {
+    const delta = t - previous
+    if(ctx == null) {
+      throw new Error("Cannot get context from canvas element.")
+    }
+    draw(ctx, delta)
+    previous = t;
+    requestAnimationFrame(t => anim(t))
+  }
+
+  requestAnimationFrame((t) => {
+    previous = t;
+    anim(t)
+  })
+</script>
