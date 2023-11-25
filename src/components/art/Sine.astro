@@ -1,0 +1,57 @@
+<div class="w-full grid place-content-center place-items-center pb-8">
+  <canvas class="border-2 border-stone-500 rounded-lg" id="canvas-sine" />
+</div>
+<script>
+  const canvas = document.getElementById('canvas-sine') as HTMLCanvasElement | null;
+  if(canvas == null) {
+    throw new Error("Element with id: 'canvas-sine' should be in the DOM")
+  }
+  const height = 144;
+  const width = 233;
+  canvas.height = height
+  canvas.width = width
+
+  const ctx = canvas.getContext('2d')
+  if(ctx == null) {
+    throw new Error("Cannot get context from canvas element.")
+  }
+
+  const amplitude = 0;
+  const frecuency = 0.0244;
+  const amplitudeVariant = 55;
+  const amplitudeVariantSpeedRatio = 21;
+  let previous: number;
+  let offset = 0;
+
+  function draw(ctx: CanvasRenderingContext2D, delta: number) {
+    offset += 0.01 * delta;
+    const a = amplitude + Math.cos(offset / amplitudeVariantSpeedRatio) * amplitudeVariant
+
+    ctx.reset()
+    ctx.strokeStyle = "#b91c1c"
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.moveTo(0, height / 2 + Math.sin(offset * frecuency) * a)
+    for(let i = 0; i < width; i++) {
+      ctx.lineTo(i, height / 2 + Math.sin((i + offset) * frecuency) * a)
+    }
+    ctx.stroke()
+  }
+  draw(ctx, 0)
+
+  function anim(t: number) {
+    const delta = t - previous
+    if(ctx == null) {
+      throw new Error("Cannot get context from canvas element.")
+    }
+    draw(ctx, delta)
+    previous = t;
+    requestAnimationFrame(t => anim(t))
+  }
+
+  requestAnimationFrame((t) => {
+    previous = t;
+    anim(t)
+  })
+
+</script>
