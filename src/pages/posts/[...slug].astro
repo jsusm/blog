@@ -5,7 +5,6 @@ import PostLayout from "../../layouts/PostLayout.astro";
 
 export const getStaticPaths = (async () => {
   const blogEntries = await getCollection("posts");
-  console.log({ blogEntries });
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },

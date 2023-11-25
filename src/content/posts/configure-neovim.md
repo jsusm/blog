@@ -1,9 +1,0 @@
----
-title: "Config neovim"
-desc: "Configuring neovim to a ready to use stage"
-date: "22-08-2023"
----
-
-# A guide to configure neovim
-
-In this post i will gide you througth the process of configuring neovim
