@@ -6,8 +6,12 @@
   if(canvas == null) {
     throw new Error("Element with id: 'canvas-sine' should be in the DOM")
   }
-  const height = 144;
-  const width = 233;
+  let height = 233;
+  let width = 377;
+  if (document.body.getBoundingClientRect().width < 500) {
+    height = 144;
+    width = 233;
+  }
   canvas.height = height
   canvas.width = width
 
@@ -17,8 +21,8 @@
   }
 
   const amplitude = 0;
-  const frecuency = 0.0244;
-  const amplitudeVariant = 55;
+  const frecuency = 5 / width;
+  const amplitudeVariant = height / 2.5;
   const amplitudeVariantSpeedRatio = 21;
   let previous: number;
   let offset = 0;
